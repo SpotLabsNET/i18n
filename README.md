@@ -62,12 +62,12 @@ class French implements \Openclerk\Locale {
 }
 ```
 
-For speed, you could also define this as a PHP file include instead.
+For speed, you could also define this as a PHP file `require()` instead.
 
 ## Providing i18n strings across multiple components and projects
 
 By using [component-discovery](https://github.com/soundasleep/component-discovery) along with
-[translation-discovery](https://github.com/soundasleep/translation-discovery), oyu can combine
+[translation-discovery](https://github.com/soundasleep/translation-discovery), you can combine
 translation files across multiple projects and Composer dependencies at build time. For example:
 
 ```php
