@@ -44,7 +44,7 @@ class I18n {
   /**
    * Get the current locale, or 'en' if none is defined.
    */
-  static function get_current_locale() {
+  static function getCurrentLocale() {
     return isset($_SESSION['locale']) ? $_SESSION['locale'] : 'en';
   }
 
@@ -98,7 +98,7 @@ class I18n {
   static $global_loaded_locales = array();
 
   static function tWithoutCategory($key = false, $args = array()) {
-    $locale = self::get_current_locale();
+    $locale = self::getCurrentLocale();
 
     // remove any unnecessary whitespace in the key that won't be displayed
     $key = self::strip_i18n_key($key);
