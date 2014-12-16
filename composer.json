@@ -1,0 +1,19 @@
+{
+  "name": "openclerk/i18n",
+  "require": {
+    "openclerk/events": "dev-master"
+  },
+  "autoload": {
+    "files": ["functions.php"],
+    "psr-4": {
+      "Openclerk\\": "src"
+    }
+  },
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/openclerk/events"
+  }],
+  "require-dev": {
+    "phpunit/phpunit": "~4.4"
+  }
+}
