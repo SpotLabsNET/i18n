@@ -106,8 +106,22 @@ class French extends DiscoveredLocale {
 
 (TODO: Add link to example project)
 
+## Discovering translation strings
+
+The [soundasleep/translation-discovery](https://github.com/soundasleep/translation-discovery) project
+has a `find` script that can be used to search your project for translation strings that may need to
+be translated across all of your components.
+
+This script will find all instances of the following translation strings, and output them to
+the `template` JSON folder:
+
+1. `t("string")`
+1. `ht("string")`
+1. `plural("string", 1)` and `plural("string", "strings", 1)`
+1. `"string" /* i18n */`
+1. And the single-quote versions of these patterns
+
 ## TODO
 
-1. How to generate a list of i18n strings used in a project (e.g. as part of a build process)?
 1. Tests
 1. Publish on Packagist
