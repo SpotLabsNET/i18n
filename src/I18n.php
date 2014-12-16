@@ -21,6 +21,14 @@ class I18n {
     self::$locales[$locale->getKey()] = $locale;
   }
 
+  /**
+   * Add a mapping of (key => locale)s, useful for component-discovery
+   * @see #addAvailableLocale()
+   */
+  static function addAvailableLocales($locales) {
+    self::$locales = array_merge(self::$locales, $locales);
+  }
+
   static function getAvailableLocales() {
     if (!isset(self::$locales['en'])) {
       self::$locales['en'] = new DefaultLocale();
