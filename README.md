@@ -112,6 +112,22 @@ class FrenchLocale extends DiscoveredLocale {
 
 (TODO: Add link to example project)
 
+## Persisting locale across sessions
+
+When changing user locale, add a cookie:
+
+```php
+setcookie('locale', $locale, time() + (60 * 60 * 24 * 365 * 10) /* 10 years in the future */);
+```
+
+And then check for this cookie as necessary:
+
+```php
+if (isset($_COOKIE["locale"]) && in_array($_COOKIE["locale"], array_keys(I18n::getAvailableLocales()))) {
+  I18n::setLocale($_COOKIE["locale"]);
+}
+```
+
 ## Discovering translation strings
 
 The [soundasleep/translation-discovery](https://github.com/soundasleep/translation-discovery) project
