@@ -27,9 +27,11 @@ TODO
 ## Using
 
 ```php
-I18n::addAvailableLocale('fr', new FrenchLocale());   // implement your own Locale here
+I18n::addAvailableLocale(new FrenchLocale());   // implement your own Locale here
 
-echo t("hello");    // returns bonjour
+I18n::setLocale('fr');
+echo t("hello");                  // returns 'bonjour'
+echo I18n::getCurrentLocale();    // returns 'fr'
 ```
 
 You can also listen to the `i18n_missing_string` event (with _openclerk/events_)
@@ -48,10 +50,14 @@ echo t("missing string");   // prints "fr: missing string"
 One easy way to implement a Locale is simply to define it in a JSON file:
 
 ```php
-class French implements \Openclerk\Locale {
+class FrenchLocale implements \Openclerk\Locale {
 
   function getKey() {
     return 'fr';
+  }
+
+  function getTitle() {
+    return 'French' /* i18n */;
   }
 
   function load() {
@@ -93,7 +99,7 @@ abstract class DiscoveredLocale implements \Openclerk\Locale {
 
 }
 
-class French extends DiscoveredLocale {
+class FrenchLocale extends DiscoveredLocale {
 
   public function __construct() {
     parent::__construct('fr', __DIR__ . "/../site/generated/translations/fr.php");

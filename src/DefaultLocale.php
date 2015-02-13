@@ -11,6 +11,10 @@ class DefaultLocale implements Locale {
     return "en";
   }
 
+  function getTitle() {
+    return "English" /* i18n */;
+  }
+
   function load() {
     throw new LocaleException("The DefaultLocale should never be loaded");
   }
