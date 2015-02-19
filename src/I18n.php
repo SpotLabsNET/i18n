@@ -71,8 +71,7 @@ class I18n {
    * call {@code missing_locale_string($key, $locale)} (if the function exists)
    * and return the default translation (in 'en').
    *
-   * @see set_locale($locale)
-   * @see missing_locale_string($key, $locale)
+   * @see setLocale($locale)
    */
   static function t($category, $key = false, $args = array()) {
     if (is_string($category) && is_string($key)) {

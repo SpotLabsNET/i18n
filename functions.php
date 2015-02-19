@@ -11,9 +11,6 @@
  * If the given string does not exist in the locale then
  * call {@code missing_locale_string($key, $locale)} (if the function exists)
  * and return the default translation (in 'en').
- *
- * @see set_locale($locale)
- * @see missing_locale_string($key, $locale)
  */
 function t($category, $key = false, $args = array()) {
   return Openclerk\I18n::t($category, $key, $args);
