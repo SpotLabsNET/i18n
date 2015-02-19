@@ -100,7 +100,7 @@ class I18n {
     $locale = self::getCurrentLocale();
 
     // remove any unnecessary whitespace in the key that won't be displayed
-    $key = self::strip_i18n_key($key);
+    $key = self::stripKey($key);
 
     if ($locale != 'en' && !isset(self::$global_loaded_locales[$locale])) {
       if (!isset(self::$locales[$locale])) {
@@ -149,8 +149,8 @@ class I18n {
    * remove any unnecessary whitespace in the key that won't be displayed
    * @return the key with all leading, trailing and multiple inline spaces removed
    */
-  static function strip_i18n_key($key) {
-    $key = preg_replace("/[\r\n]+/im", " ", $key);
+  static function stripKey($key) {
+    $key = preg_replace("/[\r\n\t]+/im", " ", $key);
     $key = preg_replace("/[\\s]{2,}/im", " ", $key);
     return trim($key);
   }

@@ -9,6 +9,10 @@ class TestFrenchLocale implements Locale {
     return "fr";
   }
 
+  function getTitle() {
+    return "French";
+  }
+
   function load() {
     return array(
       "account" => "compte",

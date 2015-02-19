@@ -81,5 +81,18 @@ class I18nTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals("9 addresses", plural(9, "address", "addresses"));
   }
 
+  /**
+   * Tests {@link I18n#stripKey()}
+   */
+  function testStripKey() {
+    $this->assertEquals("hello", I18n::stripKey("hello"));
+    $this->assertEquals("hello world hello world", I18n::stripKey("hello world hello world"));
+    $this->assertEquals("hello world hello world", I18n::stripKey("
+      hello world
+      hello world
+    "));
+    $this->assertEquals("hello world hello world", I18n::stripKey("hello\tworld\thello\tworld"));
+    $this->assertEquals("hello world hello world", I18n::stripKey("hello world\nhello world"));
+  }
 
 }
