@@ -1,19 +1,17 @@
 {
   "name": "openclerk/i18n",
-  "require": {
-    "openclerk/events": "dev-master"
-  },
+  "description": "A library for simple i18n management in PHP",
   "autoload": {
     "files": ["functions.php"],
     "psr-4": {
       "Openclerk\\": "src"
     }
   },
-  "repositories": [{
-    "type": "vcs",
-    "url": "https://github.com/openclerk/events"
-  }],
+  "require": {
+    "openclerk/events": "dev-master"
+  },
   "require-dev": {
-    "phpunit/phpunit": "~4.4"
+    "phpunit/phpunit": ">=4.0",
+    "soundasleep/component-tests": "dev-master"
   }
 }
