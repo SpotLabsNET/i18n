@@ -1,5 +1,5 @@
-openclerk/i18n
-===============
+openclerk/i18n [![Build Status](https://travis-ci.org/openclerk/i18n.svg?branch=master)](https://travis-ci.org/openclerk/i18n)
+==============
 
 A library for simple i18n management in PHP.
 
@@ -12,11 +12,7 @@ and run `composer update` to install it into your project:
 {
   "require": {
     "openclerk/i18n": "dev-master"
-  },
-  "repositories": [{
-    "type": "vcs",
-    "url": "https://github.com/openclerk/i18n"
-  }]
+  }
 }
 ```
 
@@ -142,8 +138,3 @@ the `template` JSON folder:
 1. `plural("string", 1)` and `plural("string", "strings", 1)`
 1. `"string" /* i18n */`
 1. And the single-quote versions of these patterns
-
-## TODO
-
-1. Tests
-1. Publish on Packagist
